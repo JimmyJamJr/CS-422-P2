@@ -18,6 +18,8 @@ def KNN_test(X_train: np.ndarray, Y_train: np.ndarray, X_test: np.ndarray, Y_tes
         values, counts = np.unique(labels, return_counts=True)
         predicted = values[np.argmax(counts)]
 
+        # print("test_{} = {} Predicted: {}".format(i+1, np.append(X_test[i], Y_test[i]), predicted))
+
         if predicted == Y_test[i]:
             correct_count += 1
 

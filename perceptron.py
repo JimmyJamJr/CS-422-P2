@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def perceptron_train(X: np.ndarray, Y: np.ndarray) -> tuple[np.ndarray, float]:
@@ -27,3 +28,16 @@ def perceptron_test(X_test: np.ndarray, Y_test: np.ndarray, w: np.ndarray, b: fl
             correct_count += 1
 
     return correct_count / X_test.shape[0]
+
+
+def plot_decision_boundary(X_test: np.ndarray, Y_test: np.ndarray, w: np.ndarray, b: float) -> None:
+    fig = plt.figure(figsize=(8,8))
+    plt.scatter(X_test[:, 0], X_test[:, 1], c=Y_test)
+    plt.xlim(-3, 3)
+    plt.ylim(-3, 3)
+
+    # Draw decision boundary line
+    X = [-3 ,3]
+    Y = [-(w[0] * x + b) / w[1] for x in X]
+    plt.plot(X, Y)
+    plt.show()
