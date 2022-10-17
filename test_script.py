@@ -26,6 +26,6 @@ mu = kmeans.K_Means(X,2,mu)
 print("KMeans:", mu)
 
 X,Y = load_data("perceptron_1.csv")
-W = perceptron_train(X,Y)
-acc = perceptron_test(X,Y,W[0],W[1])
+W = percept.perceptron_train(X,Y)
+acc = percept.perceptron_test(X,Y,W[0],W[1])
 print("Percept:", acc)

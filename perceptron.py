@@ -22,7 +22,7 @@ def perceptron_train(X: np.ndarray, Y: np.ndarray) -> tuple[np.ndarray, float]:
 def perceptron_test(X_test: np.ndarray, Y_test: np.ndarray, w: np.ndarray, b: float) -> float:
     correct_count = 0
     for i in range(X_test.shape[0]):
-        a = np.dot(X[i, :], w) + b
+        a = np.dot(X_test[i, :], w) + b
         if a * Y_test[i] > 0:
             correct_count += 1
 
