@@ -22,23 +22,3 @@ def KNN_test(X_train: np.ndarray, Y_train: np.ndarray, X_test: np.ndarray, Y_tes
             correct_count += 1
 
     return correct_count / X_test.shape[0]
-
-
-def load_data(file_data):
-    data = np.genfromtxt(file_data, skip_header=1, delimiter=',')
-    X = []
-    Y = []
-    for row in data:
-        temp = [float(x) for x in row]
-        temp.pop(-1)
-        X.append(temp)
-        Y.append(int(row[-1]))
-    X = np.array(X)
-    Y = np.array(Y)
-    return X,Y
-
-
-if __name__ == "__main__":
-    X,Y = load_data("nearest_neighbors_1.csv")
-    acc = KNN_test(X,Y,X,Y,3)
-    print("KNN:", acc)

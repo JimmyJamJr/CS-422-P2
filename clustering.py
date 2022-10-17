@@ -17,10 +17,3 @@ def K_Means(X: np.ndarray, K: int, mu: np.ndarray) -> np.ndarray:
         if (new_mu == mu).all():
             return mu
         mu = new_mu
-
-if __name__ == "__main__":
-    X = np.genfromtxt("clustering_1.csv", skip_header=1, delimiter=',')
-    mu = np.array([[1],[5]])
-    mu = K_Means(X,2,mu)
-    print("KMeans:", mu)
-    # print(K_Means(X, 2, np.array([])))
